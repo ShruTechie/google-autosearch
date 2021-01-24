@@ -1,21 +1,17 @@
 import React, { useState } from 'react'
 import './Search.css'
 import { Search, Mic } from '@material-ui/icons';
-import { Button } from '@material-ui/core';
-import { useHistory } from 'react-router';
 import { actionTypes } from '../reducer'
 import { StateValues } from '../StateProvider'
 import useGoogleSearch from '../useGoogleSearch'
 
 
-function SearchPage({ hideButton = false }) {
+function SearchPage() {
 
     const [input, setInput] = useState('')
-    const history = useHistory()
 
     const [term, dispatch] = StateValues()
     const { data } = useGoogleSearch(term ? term : '')
-    console.log(data)
 
 
     const getData=(e)=>{
@@ -41,22 +37,20 @@ function SearchPage({ hideButton = false }) {
     
       {term && (
         <div className="autoContainer">
-          {/* {options
-            .filter(({ name }) => name.indexOf(search.toLowerCase()) > -1)
-            .map((value, i) => {
-              return (
-                <div
-                  onClick={() => updatePokeDex(value.name)}
-                  className="option"
-                  key={i}
-                  tabIndex="0"
-                >
-                  <span>{value.name}</span>
-                  <img src={value.sprite} alt="pokemon" />
-                </div>
-              );
-            })} */}
-            <h1   className="option">hello</h1>
+        
+            {
+                data && data.length >0 ? data.items.map(item=>
+                    {
+                        return(
+                            <div>
+                           
+                                 <h2>{item.title}</h2>
+                         
+                             </div>
+                        )
+                }) : <p>No results</p>
+            }
+      
         </div>
       )}
     </div>

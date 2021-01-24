@@ -67,6 +67,9 @@
   border-radius: 0 0 24px 24px;
   padding-bottom: 4px;
   overflow: hidden;
+  max-width: 42%;
+  margin-left: 29%;
+  padding: 1%;
 }
 
 .option {

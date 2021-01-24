@@ -11,7 +11,7 @@ const reducer = (state, action) => {
     switch (action.type) {
         case 'SET_SEARCH_TERM':
             return {
-                ...state,
+                // ...state,
                 term: action.term
             }
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import './Home.css'
-import { Link } from 'react-router-dom'
-import { AccountCircle, Apps } from '@material-ui/icons';
+
 import SearchPage from './Search'
 function Home() {
     return (

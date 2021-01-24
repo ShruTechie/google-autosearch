@@ -6,17 +6,11 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Search from './Search'
 function App() {
   return (
     <div className="app">
       <Router>
         <Switch>
-
-          <Route exact path='/search'>
-            <Search />
-          </Route>
-
           <Route path='/' >
             <Home />
           </Route>
